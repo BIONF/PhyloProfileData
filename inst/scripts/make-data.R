@@ -32,7 +32,10 @@ ampkTorDomains <- read.table(
     comment.char = "",
     stringsAsFactors = FALSE
 )
-colnames(ampkTorDomains) <- c("seedID", "orthoID", "feature", "start", "end")
+colnames(ampkTorDomains) <- c(
+    "seedID", "orthoID", "length", "feature", "start", "end","weight",
+    "path","acc","evalue","bitscore","pStart","pEnd","pLen"
+)
 
 # Read AMPK-TOR fasta sequences
 unzip(temp, files = "ampk-tor.extended.fa", exdir = tempDir, overwrite = TRUE)
@@ -78,7 +81,8 @@ arthropodaDomain <- read.table(
     stringsAsFactors = FALSE
 )
 colnames(arthropodaDomain) <- c(
-    "seedID", "orthoID", "length", "feature", "start", "end", "weight", "path"
+    "seedID", "orthoID", "length", "feature", "start", "end","weight",
+    "path","acc","evalue","bitscore","pStart","pEnd","pLen"
 )
 
 # Read Arthropoda fasta sequences
